@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+             xmlns:q="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             x:Class="XComosMobile.Pages.maintenance.Tasks"  >
+
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+      <q:QueryControl x:Name ="m_Query" VerticalOptions="FillAndExpand"  />
+
+      <!--<ListView x:Name ="listaAccords" BackgroundColor ="Blue"/>-->
+
+      <!--<acview:AccordionView  x:Name ="Test1" BackgroundColor ="Red" KeepOnlyOneItemOpen ="True"/>-->
+
+    </StackLayout>
+
+</xcomos:PageTemplate>

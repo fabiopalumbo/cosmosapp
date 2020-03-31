@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+             x:Class="XComosMobile.Pages.PageProjects"
+             Title="{xlng:Translate PageProjects}" >
+    <StackLayout Padding="10" >
+          <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand"
+                    HorizontalOptions="StartAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>                  
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+              <StackLayout Grid.Row="0" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <!-- <xcontrols:AFLabel Text="&#xf1c0;" TextColor="{StaticResource web-black}" FontSize="20" VerticalOptions ="Center" /> -->
+                <Label Text="{xlng:Translate data_base}" VerticalOptions ="Center"/>
+              </StackLayout>
+
+              <xcontrols:CustomPicker x:Name="PickerDatabase" Grid.Row="0" Grid.Column="1"
+                    ItemsSource="{Binding Databases}"  ItemDisplayBinding="{Binding Value}" SelectedIndexChanged="OnDatabaseSelected" 
+                    SelectedItem="{Binding SelectedDB}"/>
+
+                           
+              <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <!-- <xcontrols:AFLabel Text="&#xf0ac;" TextColor="{StaticResource web-black}" FontSize="15" VerticalOptions ="Center" /> -->
+                <Label Text="{xlng:Translate project}" VerticalOptions ="Center"/>
+              </StackLayout>
+
+              <xcontrols:CustomPicker x:Name="PickerProject" Grid.Row="3" Grid.Column="1" 
+                    ItemsSource="{Binding Projects}" ItemDisplayBinding="{Binding Name}" SelectedIndexChanged="OnProjectSelected" 
+                         SelectedItem="{Binding SelectedProject}" />
+
+
+              <StackLayout Grid.Row="4" Grid.Column="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <!-- <xcontrols:AFLabel Text="&#xf279;" TextColor="{StaticResource web-black}" FontSize="15" VerticalOptions ="Center" /> -->
+                <Label Text="{xlng:Translate overlay}" VerticalOptions ="Start"/>
+              </StackLayout>
+
+
+              <StackLayout x:Name="StackBreadcrumb" Orientation="Vertical" Grid.Row="4" Grid.Column="1" >
+                    <!-- layer breadcrum presentation see code ProjectPage.xaml.cs -->
+                </StackLayout>
+
+               <!--   
+              <StackLayout Grid.Row="5" Grid.Column="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">              
+                <Label Text="Child Layers" VerticalOptions ="Center"/>
+              </StackLayout>
+              -->
+
+              <ListView x:Name="ListViewLayers" Grid.Row="5" Grid.Column="1" ListView.HasUnevenRows="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      ItemsSource="{Binding Layers}" ItemSelected="OnLayerSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout HorizontalOptions ="FillAndExpand">                                    
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                    <Label Text="{Binding Description}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            
+            </Grid>
+            </StackLayout>
+      
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="{xlng:Translate save}" VerticalOptions="Center" HorizontalOptions="Start" />
+            <Switch IsToggled="{Binding RememberLayer, Mode=TwoWay}"  />
+        </StackLayout>
+        <Button x:Name="BtnOpen" CornerRadius="8" Text="{xlng:Translate select}" Clicked="OnClickedOpenProject"
+                IsEnabled="{Binding IsProjectReady}" />
+    </StackLayout>
+</xcomos:PageTemplate>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell   xmlns="http://xamarin.com/schemas/2014/forms" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+            xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"   
+            x:Class="XComosMobile.Pages.maintenance.TaskCell">
+  <ViewCell.View>
+        <StackLayout Padding="0"> <!-- extra stacklyout is required to handle visibility -->
+            <StackLayout Padding="5" IsVisible="{Binding IsVisible}">
+                <Frame  x:Name="mainFrame" IsVisible ="False" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" CornerRadius="8" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                    <StackLayout>
+                    
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label x:Name="TaskTitle" Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  
+                                   FontAttributes="Bold" TextColor="{DynamicResource ComosColorNavBar}" />
+
+                            <Switch x:Name="CompleteTask" Grid.Column="2" Grid.RowSpan="2" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="End"/>
+
+                            <Label x:Name="labelNew" Text="{xlng:Translate new_item}" Grid.Column="1" Grid.RowSpan="2" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="End"  
+                                   FontAttributes="Bold" TextColor="{DynamicResource ComosColorNavBar}" />
+
+                            <xcontrols:AFButton Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" x:Name="btExpand" Text="&#xf107;"
+                                      Style="{DynamicResource ListButtonItem}"      
+                                      FontSize="Large"                                      
+                                      VerticalOptions="Center"
+                                      Clicked="OnTaskTitleTapped"
+                                      HorizontalOptions="End"                                      
+                                      Margin="5,0,0,0"
+                                        >
+                            </xcontrols:AFButton>
+
+                            <Label x:Name="TaskDescription" TextColor="{DynamicResource UITextColor}" Grid.Column="0" Grid.Row="1" FontAttributes="None" FontSize="Small"  HorizontalOptions="StartAndExpand"  HorizontalTextAlignment="Start"/>
+
+                        </Grid>
+
+                        <StackLayout x:Name="TaskInfo" IsVisible="False" Opacity="0">
+                            <Grid x:Name="GridTask" RowSpacing="0" ColumnSpacing="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                        </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        </StackLayout>
+  </ViewCell.View>
+</ViewCell>

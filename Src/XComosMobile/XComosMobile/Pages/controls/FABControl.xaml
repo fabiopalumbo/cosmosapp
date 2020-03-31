@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"      
+             Grid.RowSpan="2"
+             x:Class="XComosMobile.Pages.controls.FABControl">
+    <ContentView.Content>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout x:Name="mainStack" Grid.Column="0" Orientation="Horizontal" IsVisible="False">
+                
+            </StackLayout>
+
+            <xcontrols:AFButton Grid.Column="1"  x:Name="btExpand"  Text="&#xf141;"
+                                            Style="{DynamicResource ScreenButtonItem}"                                            
+                                            Clicked="btExpand_Clicked"
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="End"
+                                            Margin="5,0,0,0"
+                                            />
+
+        </Grid>
+
+    </ContentView.Content>
+</ContentView>

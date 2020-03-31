@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"             
+             ControlTemplate="{StaticResource PageTemplate}"
+             x:Class="XComosMobile.Pages.comos.PageAttributes"
+             Title="{xlng:Translate Atributos}" >
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="Auto"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <StackLayout Grid.ColumnSpan="2"  Grid.RowSpan="2"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     Orientation="Vertical" Padding="0,5,0,0">
+
+      <xcontrols:MidiaControl x:Name="midiaControl" HorizontalOptions="FillAndExpand"/>
+
+      <ScrollView x:Name="m_Panel" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+              Orientation="Vertical" Margin="0,10,0,0">
+      </ScrollView>                   
+    </StackLayout>
+		
+		<StackLayout x:Name="floatingMenu" Grid.Column ="1" Grid.Row ="1" Orientation="Horizontal" HorizontalOptions="End">
+
+			<!--<ScrollView x:Name="m_Panel2" HorizontalOptions="FillAndExpand"
+						Orientation="Horizontal">-->
+
+				<xcontrols:FABControl Margin="5,0,0,0" HeightRequest="60">
+
+					<xcontrols:FABControl.AFButtons>
+
+						<xcontrols:AFButton Text="&#xf030;"
+                                     x:Name="ButtonTakePicture"
+                                               Style="{DynamicResource ScreenButtonItem}"
+                                               BackgroundColor="{DynamicResource UIFabButton}"
+                                               TextColor="{DynamicResource UIFabButtonText}"
+                                               Clicked="Button_Clicked_Photo"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="End"
+                                               Margin="5,0,0,0"
+                                            />
+
+						<xcontrols:AFButton x:Name="btRecord" Text="&#xf130;"
+                                     Style="{DynamicResource ScreenButtonItem}"
+                                    IsJustClick ="False"
+                                    DragLeft ="btRecord_Cancel"
+                                    Pressed="btRecord_Pressed"
+                                    Released="btRecord_Released"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"
+                                     Margin="5,0,0,0"
+                                            />
+
+
+						<xcontrols:AFButton Text="&#xf04b;"
+                                       x:Name="ButtonPlayPause"
+                                                 Style="{DynamicResource ScreenButtonItem}"
+                                                 BackgroundColor="{DynamicResource UIFabButton}"
+                                                 TextColor="{DynamicResource UIFabButtonText}"
+                                                 Clicked="OnPlayPauseClick"
+                                                 VerticalOptions="Center"
+                                                 HorizontalOptions="End"
+                                                 Margin="5,0,0,0"
+                                            />
+
+						<xcontrols:AFButton Text="&#xf16b;"
+                                       x:Name="btAddNewJDEMaterial"
+                                                 Style="{DynamicResource ScreenButtonItem}"
+                                                 BackgroundColor="{DynamicResource UIFabButton}"
+                                                 TextColor="{DynamicResource UIFabButtonText}"
+                                                 Clicked="OnAddNewJDEMaterialClick"
+                                                 VerticalOptions="Center"
+                                                 HorizontalOptions="End"
+                                                 Margin="5,0,0,0"
+                                            />
+
+						<xcontrols:AFButton x:Name="btNew"  Text="{Binding NewDevIcon}"
+                                                Style="{DynamicResource ScreenButtonItem}"
+                                                IsVisible="{Binding ViewNewDev}"
+                                                Clicked="btNew_Clicked"
+                                                VerticalOptions="Center"
+                                                HorizontalOptions="End"
+                                                Margin="5,0,0,0"
+                                                />
+
+						<xcontrols:AFButton x:Name="btTasks"  Text="&#xf0cb;"
+																									Style="{DynamicResource ScreenButtonItem}"
+																									IsVisible="{Binding ViewNewDev}"
+																									Clicked="btTasks_Clicked"
+																									VerticalOptions="Center"
+																									HorizontalOptions="End"
+																									Margin="5,0,0,0"
+																									/>
+
+						<xcontrols:AFButton x:Name="btSave" Text="&#xf0c7;"
+                                               Style="{DynamicResource ScreenButtonItem}"
+                                               Clicked="OnSaveClicked"
+                                               IsVisible="True"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="End"
+                                               Margin="5,0,0,0"
+                                            />
+
+					</xcontrols:FABControl.AFButtons>
+
+				</xcontrols:FABControl>
+			<!--</ScrollView>-->
+			</StackLayout>
+
+  </Grid>
+
+
+</xcomos:PageTemplate>

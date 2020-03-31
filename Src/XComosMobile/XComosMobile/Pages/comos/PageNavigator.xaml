@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"                     
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+             x:Class="XComosMobile.Pages.comos.PageNavigator"
+             Title="{xlng:Translate 'Navegador de objetos'}" >
+    <StackLayout>
+      <!--
+        <Button  x:Name="BtnMoveUp" Text="Move Up" IsVisible ="False" Clicked="OnClickedMoveUp"
+                IsEnabled="{Binding IsNotRoot, Mode=OneWay}" />
+      -->                
+      
+      <xcontrols:AFButton  x:Name="BtnMoveUp" Text="&#xf102;" IsVisible ="False" Clicked="OnClickedMoveUp"
+                IsEnabled="{Binding IsNotRoot, Mode=OneWay}" />
+
+      <ListView x:Name="ListViewObjects"
+                ListView.HasUnevenRows="True"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                ItemsSource="{Binding Children}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+                <ffimage:CachedImage  Source="{Binding Picture, 
+                                Converter={StaticResource PictureToImage}, 
+                                ConverterParameter={Binding Database}}"
+                       MinimumWidthRequest="15"
+                       MinimumHeightRequest="15"
+                       WidthRequest="15"
+                       HeightRequest="15" />
+                <Label Text="{Binding Name}" FontAttributes="Bold" />
+                <Label Text="{Binding Description}" HorizontalOptions="StartAndExpand" />
+
+                <xcontrols:AFButton Text="&#xf054;" FontSize="Medium" TextColor="{DynamicResource UIButtonTextColor}"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="Transparent"
+                                    VerticalOptions="Center"
+                                    Clicked="OnDetailsClicked"
+                                    Style="{DynamicResource MenuButtonItem}"
+                                    CommandParameter="{Binding .}"/>
+
+                <!--
+                  <Button Text="..." Clicked="OnDetailsClicked" CommandParameter="{Binding .}" />
+                 -->
+
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+</xcomos:PageTemplate>

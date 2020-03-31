@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<popup:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+    x:Class="XComosMobile.PopUps.AddEquipment">
+  
+  <StackLayout x:Name="mainLayout" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="25, 25, 25, 25">
+    
+    <StackLayout x:Name="cancelLayout" VerticalOptions="Start" HorizontalOptions="End" Padding="0, 0, -18, -22">
+      <xcontrols:AFButton x:Name="cancel" TextColor="White" FontSize="20" WidthRequest="35" HeightRequest="35" BorderRadius="35" BackgroundColor="#F54646" Clicked="OnClose"/>
+    </StackLayout>
+ 
+    <Frame BackgroundColor="{DynamicResource ComosColorModuleCard}" VerticalOptions="End" CornerRadius="8" Padding="8, 30, 8, 8">
+        <StackLayout Margin="10,5,10,5" Padding="0, 0, 0, 0">
+              
+              <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                <Label x:Name="codigoDeEquipoLabel" Text ="Código de Equipo" VerticalOptions ="Center" TextColor="{DynamicResource UITextColor}" HorizontalOptions="Start" />
+                <xcontrols:CustomEditor x:Name="codigoDeEquipo" TextColor="{DynamicResource UITextColor}" Text="{Binding codigoDeEquipo, Mode=TwoWay}" HorizontalOptions ="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <xcontrols:AFButton x:Name="qrScan" FontSize="25" WidthRequest="35" HeightRequest="35" BackgroundColor="{DynamicResource UIFabButton}" TextColor="{DynamicResource UIFabButtonText}" HorizontalOptions="End" Clicked="OnScanClicked"/>    
+              </StackLayout>
+          
+              <StackLayout x:Name="descripcionLayout" Orientation="Horizontal" IsVisible="false" Margin="0,0,0,5">
+                <Grid x:Name="descripcionGrid" VerticalOptions="Center">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="*"/>
+                    <ColumnDefinition Width ="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height ="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Label Text ="Descripcion" Grid.Row="0" Grid.Column ="0" VerticalOptions ="Center" TextColor="{DynamicResource UITextColor}" HorizontalOptions ="FillAndExpand"/>
+                  <xcontrols:CustomEditor Grid.Row="0" Grid.Column ="1" x:Name="descripcion" TextColor="{DynamicResource UITextColor}" Text="{Binding descripcion, Mode=TwoWay}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                </Grid>
+          </StackLayout>
+          
+          <Button x:Name="action" CornerRadius="8" BackgroundColor="{DynamicResource ComosColorNavBar}" TextColor="{DynamicResource UIFabButtonText}" Clicked="OnActionClicked"></Button>
+          <Label x:Name="insertAgain" IsVisible="false" Text="No es el equipo que estoy buscando..." TextColor="{DynamicResource UIFabButton}" />
+          <Label x:Name="noVerificationNeeded" Text="Continuar sin verificar" TextColor="{DynamicResource UIFabButton}" />
+      </StackLayout>
+    
+    </Frame>
+  </StackLayout>
+</popup:PopupPage>

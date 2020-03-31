@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             ControlTemplate="{StaticResource PageTemplate}"                     
+             x:Class="XComosMobile.Pages.comos.PageSpecifications"      
+             Title="{xlng:Translate specifications}">
+    <StackLayout Padding="0,5,0,0">
+      
+        <ListView x:Name="ListViewObjects" 
+              ListView.HasUnevenRows="True" 
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand"
+              ItemsSource="{Binding Specifications}"
+              ItemTapped="OnSpecificationSelected" >
+            <ListView.ItemTemplate>              
+                <DataTemplate>
+                  <ViewCell>                    
+                    <Frame Margin="0,4,0,0" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" 
+                           BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                      <Label Text="{Binding Description}"/>
+                    </Frame>                   
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</xcomos:PageTemplate>

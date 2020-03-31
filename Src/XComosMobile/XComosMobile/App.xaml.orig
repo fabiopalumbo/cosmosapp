@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XComosMobile.Converters;assembly=XComosMobile"
+             xmlns:ui="clr-namespace:XComosMobile.UI;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"             
+             x:Class="XComosMobile.App">
+    <Application.Resources>
+
+        <!-- Application resource dictionary : Supporting a Waiting/Spinning icon + message -->
+        <ResourceDictionary>
+            <ControlTemplate x:Key="PageTemplate">
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                             Orientation="Vertical">
+                    <ContentView Content="{TemplateBinding NavigationBarControl}" />
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                 Orientation="Vertical" Padding="5">
+                        <ContentPresenter HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                    </StackLayout>  
+                </StackLayout>
+            </ControlTemplate>
+
+            <local:PictureRefToImage x:Key="PictureToImage"></local:PictureRefToImage>
+            <local:TextToBoolean x:Key="TextToBoolean"></local:TextToBoolean>
+            <local:TextToDateTime x:Key="TextToDateTime"></local:TextToDateTime>
+            <local:IsQueryCachedValue x:Key="IsQueryCachedValue"></local:IsQueryCachedValue>
+
+            <!-- Theming support -->
+            <!-- Siemens Colors -->
+            <Color x:Key="primary-petrol">#009999</Color>
+            <Color x:Key="primary-snow">#ffffff</Color>
+            <Color x:Key="primary-stone-dark">#879BAA</Color>
+            <Color x:Key="primary-stone-light">#BECDD7</Color>
+            <Color x:Key="primary-sand-dark">#AAAA96</Color>
+            <Color x:Key="primary-sand-light">#D7D7CD</Color>
+            <Color x:Key="accent-yellow-dark">#EB780A</Color>
+            <Color x:Key="accent-yellow-light">#FFB900</Color>
+            <Color x:Key="accent-red-dark">#641946</Color>
+            <Color x:Key="accent-Red-light">#AF235F</Color>
+            <Color x:Key="accent-blue-dark">#006487</Color>
+            <Color x:Key="accent-blue-light">#55A0B9</Color>
+            <Color x:Key="accent-green-dark">#647D2D</Color>
+            <Color x:Key="accent-green-light">#AAB414</Color>
+            <Color x:Key="accent-gray-dark">#0F1923</Color>
+            <Color x:Key="accent-gray-light">#505A64</Color>
+            <Color x:Key="web-gray">#EEEEEE</Color>
+            <Color x:Key="web-red">#990000</Color>
+            <Color x:Key="web-black">#000000</Color>
+
+            <Color x:Key="UIAccent">#636363</Color>
+            <Color x:Key="UITextColor">#000000</Color>
+            <Color x:Key="UIBackgoundInputColor">#c4c4c4</Color>
+            <Color x:Key="UIPlaceholderColor">#505A64</Color>
+
+            <Color x:Key="UIFabButton">#3fa8b4</Color>
+            <Color x:Key="UIFabButtonText">#ffffff</Color>
+            <Color x:Key="UIButtonColor">#a3a3a3</Color>
+            <Color x:Key="UIButtonTextColor">Black</Color>
+            
+            <!-- spec colors-->
+
+            <Color x:Key="spec-only-cache">Blue</Color>
+            <Color x:Key="spec-changed-session">Yellow</Color>
+            <Color x:Key="UIBackgroundColor">#B4B6B8</Color>
+            
+            <!-- native COMOS Colors-->
+
+            <Color x:Key="ComosColorNavBar">#828385</Color>
+            <Color x:Key="ComosColorNavBarText">#FFFFFF</Color>
+            <Color x:Key="ComosColorModuleCard">#a3a3a3</Color>
+            <Color x:Key="ComosColorButtonColor">#a3a3a3</Color>
+            
+
+            
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIBackgroundColor}" />
+            </Style>
+            <Style TargetType="ScrollView" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIBackgroundColor}" />
+            </Style>
+            <Style TargetType="TabbedPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIBackgroundColor}" />
+            </Style>
+            <Style TargetType="Label" ApplyToDerivedTypes="True">
+                <Setter Property="TextColor" Value="{DynamicResource UITextColor}" />
+            </Style>
+            <Style TargetType="Entry" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIBackgoundInputColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource UITextColor}" />
+                <Setter Property="PlaceholderColor" Value="{DynamicResource UIPlaceholderColor}" />
+            </Style>
+            <Style TargetType="Editor" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIBackgoundInputColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource UITextColor}" />
+                <Setter Property="ui:SAccentColorEffect.Use" Value="True" />
+            </Style>
+            <Style TargetType="SearchBar" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIBackgoundInputColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource UITextColor}" />
+                <Setter Property="PlaceholderColor" Value="{DynamicResource UIPlaceholderColor}" />
+                <Setter Property="CancelButtonColor" Value="{DynamicResource UIAccent}" />
+                <Setter Property="ui:SAccentColorEffect.Use" Value="True" />
+            </Style>
+            <Style TargetType="Picker" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIBackgoundInputColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource UITextColor}" />
+                <Setter Property="ui:SAccentColorEffect.Use" Value="True" />
+            </Style>
+            <Style TargetType="Slider" ApplyToDerivedTypes="True">
+                <Setter Property="ui:SAccentColorEffect.Use" Value="True" />
+            </Style>
+            <Style TargetType="Switch" ApplyToDerivedTypes="True">
+                
+            </Style>
+
+            <Style  x:Key="MenuButtonItem" TargetType="Button" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="#00000000" />
+                <Setter Property="TextColor" Value="{DynamicResource ComosColorNavBarText}" />
+                <Setter Property="BorderColor" Value="#000000" />
+            </Style>
+
+            <Style TargetType="Button" ApplyToDerivedTypes="False">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIButtonColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource UIButtonTextColor}" />
+            </Style>
+<<<<<<< working copy
+
+=======
+            
+>>>>>>> merge rev
+            <Style  x:Key="ScreenButtonItem" TargetType="xcontrols:AFButton" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource UIFabButton}" />
+                <Setter Property="TextColor" Value="{DynamicResource UIFabButtonText}" />
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="HeightRequest" Value="60" />
+                <Setter Property="BorderRadius" Value="150" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+
+            <Style  x:Key="ListButtonItem" TargetType="Button" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ComosColorButtonColor}" />
+                <Setter Property="TextColor" Value="{DynamicResource ComosColorNavBar}" />
+                <Setter Property="WidthRequest" Value="40" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="BorderRadius" Value="150" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+
+            <Style TargetType="ListView">
+                <Setter Property="Header">
+                    <Setter.Value>
+                        <StackLayout HeightRequest="0" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Footer">
+                    <Setter.Value>
+                        <StackLayout HeightRequest="0" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="ComosFrame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ComosColorModuleCard}" />
+                <Setter Property="OutlineColor" Value="{DynamicResource ComosColorModuleCard}" />
+                <Setter Property="CornerRadius" Value="4" />
+            </Style>
+            <Style x:Key="ComosQueryResult" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{DynamicResource ComosColorModuleCard}" />
+            </Style>
+            <Style TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="{DynamicResource UIAccent}" />
+                <Setter Property="ui:SAccentColorEffect.Use" Value="True" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>

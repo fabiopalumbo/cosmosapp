@@ -1,0 +1,17 @@
+Install
+-------
+
+1. Install ComosWeb 10.2.1
+2. Unpack BRComosWeb
+3. CReate site BRComosWeb no IIS
+4. Webconfig
+	ComosBin -> define
+5. Copy COMOS.IO.exe and others to ComosBin
+6. Webconfig
+	Connection string
+7. Test http://localhost:88/Service.svc/ValidateUser/oqs6hw/sdgf
+		http://localhost:88/Test.html
+
+Bug:
+----
+c:\program files\....\bin -> error writing file Log (IIS)	

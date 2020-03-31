@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage   xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"             
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             CloseWhenBackgroundIsClicked="False" >
+    <!--<Frame 
+        Padding="4"  CornerRadius="0"
+        BackgroundColor="Color.White"
+        OutlineColor="Black" VerticalOptions="Center" HorizontalOptions="Center" >
+        <StackLayout 
+            Padding="10"
+            BackgroundColor="Color.White"
+            VerticalOptions="Center" HorizontalOptions="Center" >
+            <Label x:Name="m_WaitingMessage" HorizontalOptions="Center" />
+            <ActivityIndicator x:Name="m_IsWaiting"  IsRunning="True" 
+                                           Color ="#AF235F" />
+        </StackLayout>
+    </Frame>
+    -->
+</pages:PopupPage>

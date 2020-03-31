@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:acview="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.AccordionView"
+             ControlTemplate="{StaticResource PageTemplate}"
+             xmlns:q="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             x:Class="XComosMobile.Pages.comos.PageQueries"
+             Title="{xlng:Translate Consultas}" >
+
+  <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">    
+    <q:QueryControl x:Name ="m_Query" VerticalOptions="FillAndExpand" />
+  </StackLayout>
+
+</xcomos:PageTemplate>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XComosMobile.Pages.controls.NavigationBarControl"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"    
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             HeightRequest="45" HorizontalOptions="FillAndExpand">
+    <ContentView.Content>
+
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout x:Name="mainStack" Orientation="Horizontal" HorizontalOptions="Fill"
+                                 BackgroundColor="{DynamicResource ComosColorNavBar}" Padding="5">
+
+                <xcontrols:AFButton  x:Name="MenuBackButtonNav"
+                                     Text="&#xf053;" FontSize="Medium"                                     
+                                     Style="{DynamicResource MenuButtonItem}"                                     
+                                     VerticalOptions="Center"
+                                     IsVisible="{TemplateBinding ShowBackButton}"
+                                     Command="{TemplateBinding OnBackButtonClicked}"
+                                     WidthRequest="{Binding NavBarButtonWidth}" />
+
+                <ContentView Content="{TemplateBinding MenuItemsLeft}" />
+
+                <Label Text="{TemplateBinding Title}" TextColor="{DynamicResource ComosColorNavBarText}" 
+                       VerticalTextAlignment="Center" FontSize="Medium"/>
+
+                <ContentView Content="{TemplateBinding MenuItemsRight}"
+                             HorizontalOptions="EndAndExpand" />
+
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="End" 
+                             VerticalOptions ="Center" Padding="0" Margin="0" Spacing="0">
+
+                    <xcontrols:AFButton x:Name="btHome" Text="&#xf015;"
+                                            Style="{DynamicResource MenuButtonItem}"
+                                            Clicked="btHome_Clicked"
+                                            IsVisible="{TemplateBinding ShowHome}"                                            
+                                            VerticalOptions="Center"           
+                                            FontSize="Medium" 
+                                            WidthRequest="{Binding NavBarButtonWidth}"
+                                            />
+
+                    <xcontrols:AFButton x:Name="btRefresh" Text="&#xf021;" 
+                                            Style="{DynamicResource MenuButtonItem}"
+                                            IsVisible="{TemplateBinding ShowRefresh}"                                            
+                                            VerticalOptions="Center"           
+                                            FontSize="Medium" 
+                                            WidthRequest="{Binding NavBarButtonWidth}"
+                                            />
+
+                    <xcontrols:AFButton x:Name="btSearch" Text="&#xf002;"
+                                            Style="{DynamicResource MenuButtonItem}"
+                                            IsVisible="{TemplateBinding ShowSearch}"                                            
+                                            VerticalOptions="Center"           
+                                            FontSize="Medium" Clicked="AFButton_Clicked" 
+                                            WidthRequest="{Binding NavBarButtonWidth}" />
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="End" 
+                             VerticalOptions ="Center" Padding="0" Margin="0" Spacing="0"
+                             IsVisible="{TemplateBinding ShowAttributeView}">
+
+                    <xcontrols:AFButton x:Name="btSave" Text="&#xf0c7;"
+                                        Style="{DynamicResource MenuButtonItem}"                                        
+                                        Clicked="btSave_Clicked"
+                                        VerticalOptions="Center"           
+                                        FontSize="Medium" 
+                                        WidthRequest="{Binding NavBarButtonWidth}"
+                                        Margin="5,0,0,0"
+                                        />
+
+                    <xcontrols:AFButton x:Name="btNav" Text="&#xf1d8;"
+                                        Style="{DynamicResource MenuButtonItem}"
+                                        Command="{TemplateBinding OnNavigate}"                                         
+                                        VerticalOptions="Center"           
+                                        FontSize="Medium" 
+                                        WidthRequest="{Binding NavBarButtonWidth}"
+                                        Margin="5,0,0,0"
+                                        />
+
+                    <xcontrols:AFButton  x:Name="btFavorite"
+                                         Text="{TemplateBinding IsFavorite}"
+                                         FontSize="Medium" TextColor="White" 
+                                         Style="{DynamicResource MenuButtonItem}"                                         
+                                         VerticalOptions="Center"                                           
+                                         Command="{TemplateBinding OnFavorite}" 
+                                         WidthRequest="{Binding NavBarButtonWidth}" 
+                                         Margin="5,0,0,0"
+                                         />
+                  
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="End" 
+                             VerticalOptions ="Center" Padding="0" Margin="0" Spacing="0"
+                             IsVisible="{TemplateBinding ShowFilter}">
+
+                    <xcontrols:AFButton  x:Name="btFilter"
+                                         Text="&#xf0b0;"
+                                         FontSize="Medium"
+                                         Style="{DynamicResource MenuButtonItem}"
+                                         Clicked="showFilter_ShowFilterButtonPressed"                                         
+                                         VerticalOptions="Center"                                                                                    
+                                         WidthRequest="{Binding NavBarButtonWidth}"                                          
+                                         Margin="5,0,0,0"
+                                         />
+
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal"  HorizontalOptions="End" 
+                             VerticalOptions ="Center" Padding="0" Margin="0" Spacing="0">
+
+                    <xcontrols:AFButton  x:Name="btOnlineStatus"
+                                         Text="&#xf1eb;"
+                                         FontSize="Medium" TextColor="{Binding OnlineColor, Mode=TwoWay}" 
+                                         Style="{DynamicResource MenuButtonItem}"                                         
+                                         VerticalOptions="Center"                                           
+                                         Command="{TemplateBinding OnOnline}" 
+                                         WidthRequest="{Binding NavBarButtonWidth}" 
+                                         Margin="5,0,0,0"
+                                         />
+
+                    <xcontrols:AFButton  Text="&#xf0ac;"
+                                         FontSize="Medium"
+                                         Style="{DynamicResource MenuButtonItem}"                                         
+                                         VerticalOptions="Center"
+                                         Clicked="btWOInfo_Clicked"
+                                         WidthRequest="{Binding NavBarButtonWidth}" 
+                                         IsVisible="{TemplateBinding ShowProjectInfo}"
+                                         Margin="5,0,0,0"
+                                         />
+
+                    <xcontrols:AFButton x:Name="MenuHamburgerNav"
+                                    Style="{DynamicResource MenuButtonItem}"
+                                    Text="&#xf0c9;" FontSize="Medium"                                     
+                                    VerticalOptions="Center"
+                                    IsVisible="{TemplateBinding ShowHamburger}"                                                                            
+                                    Command="{TemplateBinding OnOpenMenu}" 
+                                    WidthRequest="{Binding NavBarButtonWidth}" />
+
+                </StackLayout>
+
+
+                
+
+            </StackLayout>
+
+            <SearchBar x:Name="searchBar" IsVisible="False" Placeholder="Buscar..." Unfocused="searchBar_Unfocused" TextChanged="searchBar_TextChanged" SearchButtonPressed="searchBar_SearchButtonPressed"/>
+
+        </StackLayout>
+        
+    </ContentView.Content>
+</ContentView>

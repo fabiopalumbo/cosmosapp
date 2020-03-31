@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+      name="ComosCustomize"
+      version="1.0.0.0"
+      type="win32"
+      />
+
+  <!-- ************************************************************* -->
+  <!-- **              ComosCustomize.manifest                    ** -->
+  <!-- **                                                         ** -->
+  <!-- **   References to additional Assemblies or OCX Coponents  ** -->
+  <!-- **                                                         ** -->
+  <!-- **   please insert here manifest information for own       ** -->
+  <!-- **   components, that exist only at specific customer      ** -->
+  <!-- **   installation                                          ** -->
+  <!-- ************************************************************* -->
+
+ 
+</assembly>

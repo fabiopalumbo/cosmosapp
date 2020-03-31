@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:ui="clr-namespace:XComosMobile.UI;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             x:Class="XComosMobile.Pages.PageMenu"  
+             WidthRequest="20"
+             Title="{xlng:Translate Solutions}" >
+    <ScrollView>
+
+    <StackLayout>
+        
+        <Grid HorizontalOptions="FillAndExpand" Padding="5,5,5,5" VerticalOptions="StartAndExpand" >
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Frame Grid.Row="0" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <StackLayout Orientation="Horizontal">
+                        <xcontrols:AFLabel Text="&#xf2bd;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="50" VerticalOptions ="Center" HorizontalOptions="Start" />
+                        <Label Margin="5,0,0,0" Text="{Binding UserName}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions ="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="{Binding ProjectName}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions ="Center"/>
+                        <Label Text="{Binding ProjectDescription}" TextColor="{DynamicResource UITextColor}" HorizontalOptions="Center" VerticalOptions ="Center"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="{Binding OverlayName}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions ="Center"/>
+                        <Label Text="{Binding OverlayDescription}" TextColor="{DynamicResource UITextColor}" HorizontalOptions="Center" VerticalOptions ="Center"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+				<!--
+            <Frame Grid.Row="2" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                                Tapped="Home_Clicked"
+                                NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <xcontrols:AFLabel Text="&#xf015;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                    <Label Text="{xlng:Translate home}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame Grid.Row="0" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                                Tapped="Maintenance_Clicked"
+                                NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <xcontrols:AFLabel Text="&#xf0ad;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                <Label Text="{xlng:Translate Maintenance}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+            </StackLayout>
+        </Frame>
+
+            <Frame Grid.Row="3" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                                Tapped="Incidents_Clicked"
+                                NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <xcontrols:AFLabel Text="&#xf071;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                    <Label Text="{xlng:Translate Incidents}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+                </StackLayout>
+            </Frame>
+-->
+
+<!-- 
+            <Frame Grid.Row="4" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                                Tapped="Search_Clicked"
+                                NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <xcontrols:AFLabel Text="&#xf002;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                    <Label Text="{xlng:Translate Search}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+                </StackLayout>
+            </Frame>
+-->
+
+            <!--<Frame Grid.Row="3" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                                Tapped="Upload_Clicked"
+                                NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <xcontrols:AFLabel Text="&#xf0ee;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                <Label Text="Upload" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+            </StackLayout>
+        </Frame>-->
+
+
+            <!--<Frame Grid.Row="4" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                                Tapped="Theme_Clicked"
+                                NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <xcontrols:AFLabel Text="&#xf1fc;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                <Label Text="Theme" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+            </StackLayout>
+        </Frame>-->
+
+<!-- 
+            <Frame Grid.Row="5" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                                Tapped="browser_Clicked"
+                                NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <xcontrols:AFLabel Text="&#xf26b;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                    <Label Text="Browser" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+                </StackLayout>
+            </Frame>
+
+                <Frame Grid.Row="4" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Tapped="Logoff_Clicked"
+                                NumberOfTapsRequired="1" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <xcontrols:AFLabel Text="&#xf011;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                        <Label Text="{xlng:Translate logoff}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+                    </StackLayout>
+                </Frame>
+-->
+                <!--<Frame Grid.Row="5" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                                Tapped="Projects_Clicked"
+                                NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <xcontrols:AFLabel Text="&#xf0ac;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                <Label Text="Projects" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+            </StackLayout>
+        </Frame>-->
+
+            <!--<Frame Grid.Row="6" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                                Tapped="Documents_Clicked"
+                                NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <xcontrols:AFLabel Text="&#xf15c;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                <Label Text="Documents" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+            </StackLayout>
+        </Frame>-->
+            <!--<StackLayout Grid.Row="6" VerticalOptions="FillAndExpand"/>-->
+
+            <!--<Label Grid.Row="7" x:Name="VersionNumber" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions ="End"/>-->
+            
+
+
+        </Grid>
+        <Label x:Name="VersionNumber" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions ="End"/>
+    </StackLayout>
+    </ScrollView>
+
+
+</ContentPage>

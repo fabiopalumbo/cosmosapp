@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             x:Class="XComosMobile.Pages.PageLogin"
+             ControlTemplate="{StaticResource PageTemplate}"
+             Title="Inicio de Sesión">
+  <ScrollView>
+        <Frame BackgroundColor="{DynamicResource ComosColorModuleCard}" OutlineColor="{DynamicResource ComosColorNavBar}" CornerRadius="25" VerticalOptions="Fill" Margin="20, 35, 20, 40">
+			<StackLayout>
+
+				<!--<StackLayout Orientation="Horizontal" HorizontalOptions ="Center">
+      <xcontrols:AFLabel Text="&#xf0ac;" TextColor="{StaticResource accent-blue-dark}" FontSize="75" VerticalOptions="Center"  />
+      <Label Text="COMOS" TextColor="{StaticResource accent-blue-dark}" FontSize="60" VerticalOptions="Center"  />
+    </StackLayout>-->
+
+				<Image
+					Aspect="AspectFit"
+					WidthRequest="160"
+					HeightRequest="160"
+					VerticalOptions="Center"
+					HorizontalOptions="Center">
+					<Image.Source>
+						<OnPlatform  x:TypeArguments="ImageSource">
+							<OnPlatform.Android>ComosLogo.png</OnPlatform.Android>
+							<OnPlatform.WinPhone>Assets/ComosLogo.png</OnPlatform.WinPhone>
+						</OnPlatform>
+					</Image.Source>
+				</Image>
+
+				<Image
+      Aspect="AspectFit"
+      VerticalOptions="Start"
+      HorizontalOptions="Center"
+			WidthRequest="170">		
+      <Image.Source>
+        <OnPlatform  x:TypeArguments="ImageSource">
+          <OnPlatform.Android>siemens.png</OnPlatform.Android>
+        </OnPlatform>
+      </Image.Source>
+    </Image>
+
+				<StackLayout
+				 HorizontalOptions="FillAndExpand"
+				 VerticalOptions="EndAndExpand"
+				 Orientation="Vertical"
+				 Padding="10,10,10,10"
+        >
+					<Grid VerticalOptions="End">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width ="100"/>
+							<ColumnDefinition Width ="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height ="Auto"/>
+							<RowDefinition Height ="Auto"/>
+							<RowDefinition Height ="Auto"/>
+							<RowDefinition Height ="Auto"/>
+							<RowDefinition Height ="Auto"/>
+							<RowDefinition Height ="Auto"/>
+
+						</Grid.RowDefinitions>
+
+						<!-- 
+        <StackLayout Grid.Row="0" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+          <Label Text ="{xlng:Translate server_address_br}" VerticalOptions ="Center" HorizontalOptions="End" />
+        </StackLayout>
+        <xcontrols:CustomEntry Grid.Row="0" Grid.Column ="1" Text="{Binding ServerNameBR, Mode=TwoWay}" Placeholder="{xlng:Translate 'server address br'}" HorizontalOptions ="FillAndExpand" />
+
+
+        <StackLayout Grid.Row="1" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+          <Label Text ="{xlng:Translate server_address}" VerticalOptions ="Center" HorizontalOptions="End" />
+        </StackLayout>
+        <xcontrols:CustomEntry Grid.Row="1" Grid.Column ="1" Text="{Binding ServerName, Mode=TwoWay}" Placeholder="{xlng:Translate 'server address'}" HorizontalOptions ="FillAndExpand" />
+-->
+
+						<StackLayout Grid.Row="1" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+							<Label Text="{Binding codeVersion, Mode=TwoWay}" VerticalOptions ="Center" HorizontalOptions="End" />
+						</StackLayout>
+
+		<!-- 		<Label Text ="Release Candidate" Grid.Row="1" Grid.Column ="1" VerticalOptions ="Center" HorizontalOptions="End" /> -->
+
+						<StackLayout Grid.Row="2" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+							<Label Text ="Nombre de usuario" VerticalOptions ="Center" HorizontalOptions="End" />
+						</StackLayout>
+						<xcontrols:CustomEntry Grid.Row="2" Grid.Column ="1" Text="{Binding UserName, Mode=TwoWay}" Placeholder="Nombre de Usuario" HorizontalOptions ="FillAndExpand" />
+
+						<StackLayout  Grid.Row="3" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+							<Label Text ="Contraseña" VerticalOptions ="Center" HorizontalOptions="End" />
+						</StackLayout>
+						<xcontrols:CustomEntry x:Name="passWordEntry" Grid.Row="3" Grid.Column ="1"  Text="{Binding Password, Mode=TwoWay}" Placeholder="Contraseña" IsPassword="True" HorizontalOptions ="FillAndExpand"/>
+
+						<!-- 
+        <StackLayout  Grid.Row="4" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+          <Label Text ="{xlng:Translate domain_name}" VerticalOptions ="Center" HorizontalOptions="End" />
+        </StackLayout>
+        <xcontrols:CustomEntry Grid.Row="4" Grid.Column ="1" Text="{Binding DomainName, Mode=TwoWay}" Placeholder="{xlng:Translate 'domain name'}" HorizontalOptions ="FillAndExpand" />
+-->
+
+						<StackLayout  Grid.Row="5" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+							<Label x:Name="LanguageLabel" Text ="{xlng:Translate language}" VerticalOptions ="Center" HorizontalOptions="End" />
+						</StackLayout>
+						<xcontrols:CustomPicker x:Name="PickerLanguages"  Title="{xlng:Translate language}" Grid.Row="5" Grid.Column ="1"/>
+
+					</Grid>
+
+                    <Button CornerRadius="8" Text="Iniciar Sesión" Clicked="OnLoginClicked" />
+					
+					<StackLayout  x:Name="StackLayoutSavePassword" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+						<Label Text="{xlng:Translate Remember_password}" VerticalOptions="Center" HorizontalOptions="Start" />
+						<Switch IsToggled="{Binding RememberPassword, Mode=TwoWay}" />
+					</StackLayout>
+				</StackLayout>
+			</StackLayout>
+		</Frame>
+  </ScrollView>
+</xcomos:PageTemplate>

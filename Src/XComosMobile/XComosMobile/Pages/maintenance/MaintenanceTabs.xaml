@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             x:Class="XComosMobile.Pages.maintenance.MaintenanceTabs"
+             ControlTemplate="{StaticResource PageTemplate}"
+			 Title="{xlng:Translate Maintenance}">
+
+    <Grid Margin="0,10,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                                Tapped="Tasks_Clicked"
+                                NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <xcontrols:AFLabel Text="&#xf0ad;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                <Label Text="{xlng:Translate my_tasks}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+            </StackLayout>
+        </Frame>
+
+        <Frame Grid.Row="1" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                                Tapped="Workpackages_Clicked"
+                                NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <xcontrols:AFLabel Text="&#xf2c3;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                <Label Text="{xlng:Translate my_workpackages}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+            </StackLayout>
+        </Frame>
+
+      <!-- 
+        <Frame Grid.Row="2" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                                Tapped="Inspections_Clicked"
+                                NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <xcontrols:AFLabel Text="&#xf2c7;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+                <Label Text="{xlng:Translate Inspection}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+            </StackLayout>
+        </Frame>
+        -->
+      
+    </Grid>
+</xcomos:PageTemplate>

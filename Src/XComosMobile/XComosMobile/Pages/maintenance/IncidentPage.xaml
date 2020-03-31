@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             x:Class="XComosMobile.Pages.maintenance.IncidentPage"
+             ControlTemplate="{StaticResource PageTemplate}"
+			 Title="{xlng:Translate Incidents}">
+  
+  <Grid Margin="0,10,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40*"/>
+      <RowDefinition Height="40*"/>
+    </Grid.RowDefinitions>
+
+    <Frame Grid.Row="0" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" CornerRadius="8" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+      <Frame.GestureRecognizers>
+        <TapGestureRecognizer
+                        Tapped="Create_New_Incident_Clicked"
+                        NumberOfTapsRequired="1" />
+      </Frame.GestureRecognizers>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <xcontrols:AFLabel Text="&#xf0eb;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start"/>
+         <Label Text="{xlng:Translate create_incident}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+      </StackLayout>
+    </Frame>
+
+    <Frame Grid.Row="1" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" CornerRadius="8" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+      <Frame.GestureRecognizers>
+        <TapGestureRecognizer
+                        Tapped="Event_Container_Clicked"
+                        NumberOfTapsRequired="1" />
+      </Frame.GestureRecognizers>
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <xcontrols:AFLabel Text="&#xf290;" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start" />
+        <Label Text="{xlng:Translate event_container}" TextColor="{DynamicResource UITextColor}" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions ="Center"/>
+      </StackLayout>
+    </Frame>
+
+  </Grid>
+</xcomos:PageTemplate>

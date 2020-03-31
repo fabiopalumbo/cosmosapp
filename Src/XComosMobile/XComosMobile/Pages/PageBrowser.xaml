@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+             Title="{xlng:Translate Browser}" 
+             x:Class="XComosMobile.Pages.PageBrowser">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Frame Padding="2" BackgroundColor="White" Grid.Row="0">
+            <SearchBar x:Name="urlEntry" SearchButtonPressed="searchBar_SearchButtonPressed" HorizontalOptions="FillAndExpand" TextColor="{DynamicResource UITextColor}"/>
+        </Frame>
+        
+        <xcontrols:CustomWebView x:Name="webView" Grid.Row="1"/>
+    </Grid>
+</xcomos:PageTemplate>

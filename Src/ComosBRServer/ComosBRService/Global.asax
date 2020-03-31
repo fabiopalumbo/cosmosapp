@@ -1,0 +1,1 @@
+﻿<%@ Application Inherits="ComosBRWeb.Global" Language="C#" %>

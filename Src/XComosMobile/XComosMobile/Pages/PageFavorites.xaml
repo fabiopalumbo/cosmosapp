@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:q="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+             Title="Favoritos"
+             x:Class="XComosMobile.Pages.PageFavorites">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+        <StackLayout x:Name="layout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+            <q:QueryControl x:Name ="m_Query" VerticalOptions="FillAndExpand"  />
+        </StackLayout>
+    </Grid>
+</xcomos:PageTemplate>

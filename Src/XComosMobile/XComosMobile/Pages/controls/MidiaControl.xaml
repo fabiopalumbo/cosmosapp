@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XComosMobile.Pages.controls.MidiaControl"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             IsVisible="False"
+             >
+    <ContentView.Content>
+        <StackLayout x:Name="mainStack" IsVisible="False">
+            <Frame BackgroundColor="{DynamicResource ComosColorModuleCard}" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" CornerRadius="8" VerticalOptions="Fill" >
+                <StackLayout>
+
+                    <Label x:Name="lblMidia" Text="{xlng:Translate media}" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" TextColor="{DynamicResource ComosColorNavBar}"/>
+
+                <ScrollView x:Name="m_Photo_Scroll" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout x:Name="m_Photo_Panel" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    </StackLayout>
+                </ScrollView>
+                    
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>

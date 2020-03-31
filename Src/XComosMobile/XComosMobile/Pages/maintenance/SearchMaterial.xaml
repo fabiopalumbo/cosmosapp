@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+            xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"             
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:q="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             xmlns:local="clr-namespace:XComosMobile.Pages.maintenance;assembly=XComosMobile"
+             Title="{xlng:Translate found_materials}"
+             x:Class="XComosMobile.Pages.maintenance.SearchMaterial" >
+
+  <ListView x:Name="ListViewFoundMaterials"
+  RowHeight="100"          
+  ItemsSource="{Binding MaterialsCollection}" HasUnevenRows="True"
+  IsGroupingEnabled="False"
+  GroupDisplayBinding="{Binding Key}"
+  GroupShortNameBinding="{Binding Key}">
+
+    <!--CachingStrategy="RecycleElement"-->
+
+    <ListView.Footer>
+      <StackLayout HeightRequest="65"/>
+    </ListView.Footer>
+
+    <ListView.GroupHeaderTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout VerticalOptions="FillAndExpand" Padding="10" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Label Text="{Binding Key}" TextColor="{DynamicResource ComosColorNavBar}" VerticalOptions="CenterAndExpand"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.GroupHeaderTemplate>
+    
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <Frame OutlineColor="{DynamicResource ComosColorNavBar}" CornerRadius="8" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}" Margin="5">
+            <Frame.GestureRecognizers>
+              <TapGestureRecognizer
+                              Tapped="Material_Clicked"
+                              NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="MaterialName" Text="{Binding DescripcionAmpliada}" Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" LineBreakMode="WordWrap" FontAttributes="Bold" TextColor="{DynamicResource ComosColorNavBar}" />             
+              </Grid>
+            </StackLayout>
+          </Frame>
+         
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    
+  </ListView>
+        
+</xcomos:PageTemplate>
+
+

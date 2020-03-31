@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             VerticalOptions="FillAndExpand"
+             x:Class="XComosMobile.Pages.controls.QueryControl" >
+
+  <ContentView.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="filterdefinition" Height="35"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="filter" Grid.Row="0" IsVisible="{Binding FilterVisible}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Text="Mostrar " VerticalOptions="Center" HorizontalOptions="End"/>
+                <Picker x:Name="pickerFilter" Grid.Column="1" MinimumHeightRequest="20" HorizontalOptions="FillAndExpand"
+                    ItemDisplayBinding="{Binding DisplayDescription}" SelectedIndexChanged="pickerFilter_SelectedIndexChanged"/>
+ 
+                <xcontrols:AFButton  x:Name="lbshow" Grid.Column="2" 
+                                     Text="&#xf03a;" FontSize="Medium" TextColor="White" 
+                                     VerticalOptions="Center"       
+                                     Clicked="Button_Clicked"                                     
+                                     Style="{DynamicResource MenuButtonItem}"/>
+
+            </Grid>
+             
+            <Grid Grid.Row="1" x:Name="queryGrid" VerticalOptions="FillAndExpand" Margin="0,5,0,0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="Auto"/>
+                </Grid.RowDefinitions>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+    
+</ContentView>

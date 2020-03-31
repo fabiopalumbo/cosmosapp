@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+             x:Class="XComosMobile.Pages.comos.PageNewDevice">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout  Grid.ColumnSpan="2"  Grid.RowSpan="2" Padding="0,5,0,0">
+
+            <Frame BackgroundColor="{DynamicResource ComosColorModuleCard}" OutlineColor="{DynamicResource ComosColorNavBar}" CornerRadius="8" VerticalOptions="Fill" >
+                <StackLayout>
+                    <Label Text="{xlng:Translate basic_info}" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" TextColor="{DynamicResource ComosColorNavBar}"/>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label x:Name="DescLabel" Text="{xlng:Translate description}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="{DynamicResource UITextColor}"/>
+                        <xcontrols:CustomEntry x:Name="txtDescription" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Text="{Binding Description, Mode=TwoWay}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <xcontrols:MidiaControl x:Name="midiaControl" HorizontalOptions="FillAndExpand"/>
+       
+            <ScrollView x:Name="m_Panel" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                Orientation="Both" Margin="0,10,0,0">
+              </ScrollView>
+             
+          <!-- 
+          <Frame x:Name="MobileTabFrame" BackgroundColor="{DynamicResource ComosColorModuleCard}" OutlineColor="Black" CornerRadius="4" VerticalOptions="Fill" >  
+          </Frame>
+          -->
+        </StackLayout>
+
+        <StackLayout  Grid.Column ="1" Grid.Row ="1" Orientation="Horizontal" HorizontalOptions="End">
+
+            <xcontrols:FABControl Margin="5,0,0,0" HeightRequest="60">
+                <xcontrols:FABControl.AFButtons>
+                    
+                        <xcontrols:AFButton x:Name="btRecord" Text="&#xf130;"                                
+                                     Style="{DynamicResource ScreenButtonItem}"
+                                    IsJustClick ="False"
+                                    DragLeft ="btRecord_Cancel"
+                                    Pressed="btRecord_Pressed"
+                                    Released="btRecord_Released"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"
+                                     Margin="5,0,0,0"
+                                        />
+
+                        <xcontrols:AFButton Text="&#xf030;"
+                                     Style="{DynamicResource ScreenButtonItem}"
+                                     Clicked="Button_Clicked_Photo"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"                                     
+                                     Margin="5,0,0,0"
+                                        />
+
+
+
+                        <xcontrols:AFButton Text="&#xf0c7;"
+                                     Style="{DynamicResource ScreenButtonItem}"                                                                            
+                                     Clicked="Button_Clicked_Create"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"                                     
+                                     Margin="5,0,0,0"
+                                        />
+                                            
+                </xcontrols:FABControl.AFButtons>
+
+            </xcontrols:FABControl>
+            
+
+            <!--<xcontrols:FABControl.FABContent>
+                    
+                <StackLayout>
+                    <xcontrols:AFButton x:Name="btRecord" Text="&#xf130;"                                
+                                     Style="{DynamicResource ScreenButtonItem}"
+                                    IsJustClick ="False"
+                                    DragLeft ="btRecord_Cancel"
+                                    Pressed="btRecord_Pressed"
+                                    Released="btRecord_Released"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"
+                                     Margin="5,0,0,0"
+                                        />
+
+
+
+                    <xcontrols:AFButton Text="&#xf030;"
+                                     Style="{DynamicResource ScreenButtonItem}"
+                                     Clicked="Button_Clicked_Photo"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"                                     
+                                     Margin="5,0,0,0"
+                                        />
+
+
+
+                    <xcontrols:AFButton Text="&#xf0c7;"
+                                     Style="{DynamicResource ScreenButtonItem}"                                                                            
+                                     Clicked="Button_Clicked_Create"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"                                     
+                                     Margin="5,0,0,0"
+                                        />
+                  
+              </StackLayout>
+                </xcontrols:FABControl.FABContent>-->
+
+            <!--</xcontrols:FABControl>/>-->
+
+            <!--<xcontrols:AFButton x:Name="btRecord" Text="&#xf130;"                                
+                                     Style="{DynamicResource ScreenButtonItem}"
+                                    IsJustClick ="False"
+                                    DragLeft ="btRecord_Cancel"
+                                    Pressed="btRecord_Pressed"
+                                    Released="btRecord_Released"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"
+                                     Margin="5,0,0,0"
+                                        />
+                   
+
+
+            <xcontrols:AFButton Text="&#xf030;"
+                                     Style="{DynamicResource ScreenButtonItem}"
+                                     Clicked="Button_Clicked_Photo"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"                                     
+                                     Margin="5,0,0,0"
+                                        />
+            
+       
+
+            <xcontrols:AFButton Text="&#xf0c7;"
+                                     Style="{DynamicResource ScreenButtonItem}"                                                                            
+                                     Clicked="Button_Clicked_Create"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="End"                                     
+                                     Margin="5,0,0,0"
+                                        />-->
+        </StackLayout>
+
+    </Grid>
+
+</xcomos:PageTemplate>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:local="clr-namespace:XComosMobile.Pages.maintenance;assembly=XComosMobile" 
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+             xmlns:q="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             x:Class="XComosMobile.Pages.maintenance.WorkPackages"
+             Title="{xlng:Translate workpackages}" >
+    
+  <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,5,0,0">
+
+        <StackLayout x:Name ="stackfilter" IsVisible="False" Margin ="5,5,5,0" Padding="15" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Picker x:Name="PickerShowBy" Title="Mostrar" ItemsSource="{Binding TasksAttributeNames}"
+            ItemDisplayBinding="{Binding DisplayDescription}" />
+            <Picker x:Name="PickerSortBy" Title="Ordenar" ItemsSource="{Binding TasksAttributeNames}"
+            ItemDisplayBinding="{Binding DisplayDescription}"/>
+            <Picker x:Name="PickerGroupBy" Title="Agrupar" ItemsSource="{Binding TasksAttributeNames}"
+            ItemDisplayBinding="{Binding DisplayDescription}"/>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+						</Grid.RowDefinitions>
+						<Button x:Name="borrar" Text="Borrar" Grid.Row="0" Grid.Column ="0"
+										BackgroundColor="{DynamicResource UIFabButton}"
+										TextColor="{DynamicResource UIFabButtonText}"
+										Clicked="OnDeleteFilters"></Button>
+						<Button x:Name="aplicar" Text="Aplicar" Grid.Row="0" Grid.Column ="1"
+										BackgroundColor="{DynamicResource UIFabButton}"
+										TextColor="{DynamicResource UIFabButtonText}"
+										Clicked="OnApplyFilters"></Button>
+					</Grid>
+        </StackLayout>
+
+        <ListView x:Name="ListViewTasks"
+              ItemsSource="{Binding TasksCollection}" HasUnevenRows="True"
+              IsGroupingEnabled="False"
+              GroupDisplayBinding="{Binding Key}"
+              GroupShortNameBinding="{Binding Key}">
+
+            <ListView.GroupHeaderTemplate>
+        <DataTemplate>
+          <ViewCell>
+              <StackLayout VerticalOptions="FillAndExpand" Padding="10" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                <Label Text="{Binding Key}" TextColor="{DynamicResource ComosColorNavBar}" VerticalOptions="CenterAndExpand"/>
+              </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.GroupHeaderTemplate>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <local:WorkPackageCell BindingContext="{Binding}"
+                          ShowByIndex="{Binding Source={x:Reference Name=PickerShowBy}, Path=SelectedIndex}" />
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+      
+      <!--
+        <xcontrols:AFButton           Text="&#xf067;"
+                                          Style="{DynamicResource ScreenButtonItem}"                                          
+                                          Clicked="OnDownloadClicked"
+                                          VerticalOptions="Center"                                          
+                                          HorizontalOptions="End"                                          
+                                          Margin="5,0,0,0"
+                                            />
+
+      -->
+
+    </StackLayout>
+    
+</xcomos:PageTemplate>

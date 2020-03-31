@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <font face="Calibri">
+      <h1>Readme</h1>
+      <h2><u>ToDo</u></h2>
+      <ul>
+        <li>Unit Tests: Use connection string not recognized by COMOS
+          GUI. =&gt; Will make it easier for the team to switch DS
+          projects.</li>
+        <li>Create a COMOS user name called "Sofia" for testing purposes.
+          =&gt; Test code can be generic for everyone.</li>
+        <li>Can&nbsp; ~IOServiceContract be removed or should be changed
+          to Dispose.</li>
+        <li>Do extensive testing if parallel execution of tasks is
+          possible. (like queries etc ...). In theory now is possible.</li>
+      </ul>
+      <h2><u>Design Considerations</u></h2>
+      Basic usage for Comos Web is (See NamedPipeTests)<br>
+      <ol>
+        <li>Start COMOS.IO.Exe process. Usage : COMOS.IO.exe [CONSOLE].
+          Console argument will show a console that can be used for
+          debugging.<br>
+        </li>
+        <li>Setup a channel for communication<br>
+        </li>
+        <li>Create a communication object of type
+          Comos.IO.IPC.IServiceContract</li>
+        <li>Open a Comos database</li>
+        <li>Do some tasks.</li>
+        <li>Close COMOS database =&gt; Will also exit the COMOS.IO.exe
+          process</li>
+      </ol>
+      <p>COMOS.IO.exe does not take a COMOS connection string as
+        argument. Main reason is that it is very hard if not impossible
+        to know when the process has been initialized and to start using
+        it for tasks. This is because opening a COMOS session takes a
+        very long time (many seconds) and NamedPipe technology has no
+        way to detect when the host is ready.</p>
+      <h2><u>General Information</u></h2>
+      <h2>Namespaces</h2>
+      <h3>IPC</h3>
+      <p>Implementation for Inter Process Communication using "Net Named
+        Pipes".</p>
+      <h3>Comos</h3>
+      <p>Implementation to interact with COMOS engine, using
+        interop.plt, etc ....</p>
+      <h3>Comos</h3>
+      <p>Implementations of debugging features.</p>
+    </font>
+  </body>
+</html>

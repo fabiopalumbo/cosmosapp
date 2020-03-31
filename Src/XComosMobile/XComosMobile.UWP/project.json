@@ -1,0 +1,25 @@
+﻿{
+  "dependencies": {
+    "Microsoft.Bcl.Build": "1.0.21",
+    "Microsoft.Data.Sqlite": "1.1.1",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
+    "Rg.Plugins.Popup": "1.1.5.188",
+    "Toasts.Forms.Plugin": "3.2.0",
+    "Xamarin.FFImageLoading": "2.2.9",
+    "Xamarin.FFImageLoading.Forms": "2.2.9",
+    "Xamarin.FFImageLoading.Transformations": "2.2.13",
+    "Xamarin.Forms": "2.5.0.121934",
+    "ZXing.Net.Mobile": "2.4.1"
+  },
+  "frameworks": {
+    "uap10.0.10586": {}
+  },
+  "runtimes": {
+    "win10-arm": {},
+    "win10-arm-aot": {},
+    "win10-x86": {},
+    "win10-x86-aot": {},
+    "win10-x64": {},
+    "win10-x64-aot": {}
+  }
+}

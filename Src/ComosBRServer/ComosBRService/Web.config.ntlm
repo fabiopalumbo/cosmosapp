@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true"/>
+    <add key="ComosConnectionString" value="..\..\Data\iDB_V10_1_2_0_0\iDB_V10_1_2_0_0.mdb" />
+    <add key="ComosBinFolder"  value="..\..\101\current\bin" />
+  </appSettings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5.2"/>
+    <httpRuntime targetFramework="4.5.2"/>
+  </system.web>
+  <system.serviceModel>
+    <!--
+    <extensions>
+      <behaviorExtensions>
+        <add name="crossOriginResourceSharingBehavior" type="ComosBRWeb.EnableCrossOriginResourceSharingBehavior, ComosBRWeb" />
+      </behaviorExtensions>
+    </extensions>
+    -->
+    <bindings>
+      <basicHttpBinding>
+        <binding name="R2MSBulkUploadSoap" allowCookies="true"
+                 maxReceivedMessageSize="20000000"
+                 maxBufferSize="20000000"
+                 maxBufferPoolSize="20000000">
+          <readerQuotas maxDepth="32"
+               maxArrayLength="200000000"
+               maxStringContentLength="200000000"/>
+        </binding>
+      </basicHttpBinding>
+      <webHttpBinding>
+        <binding>
+          <security mode="TransportCredentialOnly">
+            <transport  clientCredentialType="Windows" />
+          </security>
+        </binding>
+        <!--
+        <binding name="nonesecure">
+          <security mode="None">
+            <transport  clientCredentialType="None" />
+          </security>
+        </binding>
+        -->
+      </webHttpBinding>
+    </bindings>
+    <services>
+      <service name="ComosBRWeb.Service" behaviorConfiguration="ServiceBehavior">
+        <endpoint address="" binding="webHttpBinding" contract="ComosBRWeb.IWebService" behaviorConfiguration="web"/>
+      </service>
+      <!--
+      <service name="ComosBRWeb.Service.NoneSecure" behaviorConfiguration="ServiceBehavior">
+        <endpoint address="" binding="webHttpBinding" name="nonesecure" contract="ComosBRWeb.IWebService" behaviorConfiguration="web"/>
+      </service>
+      -->
+    </services>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="ServiceBehavior" >
+          <!-- To avoid disclosing metadata information, set the values below to false before deployment -->
+          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" />
+          <!-- To receive exception details in faults for debugging purposes, set the value below to true.  Set to false before deployment to avoid disclosing exception information -->
+          <serviceDebug includeExceptionDetailInFaults="true"/>
+          <serviceAuthorization serviceAuthorizationManagerType="ComosBRWeb.MyServiceAuthorizationManager,ComosBRWeb" />
+        </behavior>
+      </serviceBehaviors>
+      <endpointBehaviors>
+        <behavior name="web">
+          <webHttp />
+         <!-- <crossOriginResourceSharingBehavior /> -->
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" />
+  </system.serviceModel>
+</configuration>

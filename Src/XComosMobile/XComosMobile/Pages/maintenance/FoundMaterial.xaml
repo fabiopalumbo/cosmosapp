@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+            xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:q="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             xmlns:local="clr-namespace:XComosMobile.Pages.maintenance;assembly=XComosMobile"
+             Title="{xlng:Translate found_material}"
+             x:Class="XComosMobile.Pages.maintenance.FoundMaterial" >
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+  <ScrollView Grid.Row="0">
+    <StackLayout Padding="0,5,0,0">
+
+      <Frame BackgroundColor="{DynamicResource ComosColorModuleCard}" OutlineColor="{DynamicResource ComosColorNavBar}" CornerRadius="8" VerticalOptions="Start" >
+        <StackLayout>
+          <Label Text="{xlng:Translate basic_info}" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" TextColor="{DynamicResource ComosColorNavBar}"/>
+
+          <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="10,10,10,10">
+
+            <Grid VerticalOptions="Center">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="30"/>
+                <ColumnDefinition Width ="*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="Auto"/>
+              </Grid.RowDefinitions>
+
+              <StackLayout Grid.Row="0" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Item largo" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="0" Grid.Column ="2" x:Name="itemLargo" HorizontalOptions ="FillAndExpand" />
+
+              <StackLayout Grid.Row="1" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Descripcion ampliada" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="1" Grid.Column ="2" x:Name="descripcionAmpliada" HorizontalOptions ="FillAndExpand" />
+
+              <StackLayout Grid.Row="2" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Estado" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="2" Grid.Column ="2" x:Name="tipoDeAlmacenamiento" HorizontalOptions ="FillAndExpand" />
+
+              <StackLayout Grid.Row="3" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Unidad de medida" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="3" Grid.Column ="2" x:Name="UoM" HorizontalOptions ="FillAndExpand" />
+
+              <StackLayout Grid.Row="4" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Cantidad de nueva orden" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="4" Grid.Column ="2" x:Name="puntosDeOrden" HorizontalOptions ="FillAndExpand" />
+
+              <StackLayout Grid.Row="5" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Punto de reorden" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="5" Grid.Column ="2" x:Name="puntosDeReorden" HorizontalOptions ="FillAndExpand" />
+
+            </Grid>
+
+          </StackLayout>
+        </StackLayout>
+      </Frame>
+
+      <Frame BackgroundColor="{DynamicResource ComosColorModuleCard}" OutlineColor="{DynamicResource ComosColorNavBar}" CornerRadius="8" VerticalOptions="Start" >
+        <StackLayout>
+          <Label Text="Información de Stock" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" TextColor="{DynamicResource ComosColorNavBar}"/>
+
+          <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="10,10,10,10">
+
+            <Grid VerticalOptions="Center">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="*"/>
+                <ColumnDefinition Width ="30"/>
+                <ColumnDefinition Width ="*"/>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="Auto"/>
+                <RowDefinition Height ="Auto"/>
+              </Grid.RowDefinitions>
+
+              <StackLayout Grid.Row="0" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Ubicacion primaria" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="0" Grid.Column ="2" x:Name="ubicacionPrimaria" HorizontalOptions ="FillAndExpand" />
+
+              <StackLayout Grid.Row="1" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Ubicacion secundaria" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="1" Grid.Column ="2" x:Name="ubicacionSecundaria" HorizontalOptions ="FillAndExpand" />
+
+              <StackLayout Grid.Row="2" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Cantidad física" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="2" Grid.Column ="2" x:Name="cantidadFisica" HorizontalOptions ="FillAndExpand" />
+
+              <StackLayout Grid.Row="3" Grid.Column ="0" Orientation="Horizontal" HorizontalOptions ="FillAndExpand">
+                <Label Text ="Cantidad disponible" VerticalOptions ="Center" HorizontalOptions="End" />
+              </StackLayout>
+              <Label Grid.Row="3" Grid.Column ="2" x:Name="cantidadDisponible" HorizontalOptions ="FillAndExpand" />
+
+            </Grid>
+
+          </StackLayout>
+        </StackLayout>
+      </Frame>
+
+    </StackLayout>
+    
+  </ScrollView>
+
+  <StackLayout VerticalOptions="End" HorizontalOptions="End" Grid.Row="0" Margin="0,0,5,5">
+  <xcontrols:AFButton Text="&#xf067;"
+       x:Name="btAddNewJDEMaterial"
+       Style="{DynamicResource ScreenButtonItem}"
+       BackgroundColor="{DynamicResource UIFabButton}"
+       TextColor="{DynamicResource UIFabButtonText}"
+       Clicked="OnAddNewJDEMaterialClick"
+       VerticalOptions="Center"
+       HorizontalOptions="Center"
+   />
+  </StackLayout>
+
+</Grid>
+ 
+</xcomos:PageTemplate>
+
+

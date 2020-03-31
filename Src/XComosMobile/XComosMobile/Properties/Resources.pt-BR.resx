@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="domain_name" xml:space="preserve">
+    <value>Domínio</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="Maintenance" xml:space="preserve">
+    <value>Manutenção</value>
+  </data>
+  <data name="PageLogin" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="Remember_password" xml:space="preserve">
+    <value>Lembrar senha</value>
+  </data>
+  <data name="server_address" xml:space="preserve">
+    <value>Servidor</value>
+  </data>
+  <data name="user_name" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="data_base" xml:space="preserve">
+    <value>Banco</value>
+  </data>
+  <data name="overlay" xml:space="preserve">
+    <value>Camada</value>
+  </data>
+  <data name="PageProjects" xml:space="preserve">
+    <value>Selecione um Projeto</value>
+  </data>
+  <data name="project" xml:space="preserve">
+    <value>Projeto</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="Incidents" xml:space="preserve">
+    <value>Incidentes</value>
+  </data>
+  <data name="my_tasks" xml:space="preserve">
+    <value>Minhas tarefas</value>
+  </data>
+  <data name="my_workpackages" xml:space="preserve">
+    <value>Minhas ordens de serviço</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>Tarefas</value>
+  </data>
+  <data name="connecting" xml:space="preserve">
+    <value>Conectando...</value>
+  </data>
+  <data name="task_not_found" xml:space="preserve">
+    <value>Tarefa não encontrada!</value>
+  </data>
+  <data name="cached_attributes" xml:space="preserve">
+    <value>Atributos salvos em cache!</value>
+  </data>
+  <data name="cached_incident" xml:space="preserve">
+    <value>Incidente criado em cache!</value>
+  </data>
+  <data name="creating_incidents" xml:space="preserve">
+    <value>Criando incidentes...</value>
+  </data>
+  <data name="creating_item" xml:space="preserve">
+    <value>Criando item...</value>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>Concluído!</value>
+  </data>
+  <data name="downloading_packages" xml:space="preserve">
+    <value>Baixando ordens de serviço...</value>
+  </data>
+  <data name="downloading_tasks" xml:space="preserve">
+    <value>Baixando tarefas...</value>
+  </data>
+  <data name="downloading_tasks_only_online" xml:space="preserve">
+    <value>O download de tarefas somente é possível online!</value>
+  </data>
+  <data name="download_done" xml:space="preserve">
+    <value>Download concluído!</value>
+  </data>
+  <data name="download_tasks_done" xml:space="preserve">
+    <value>Download das tarefas concluído!</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Erro!</value>
+  </data>
+  <data name="fetch_query" xml:space="preserve">
+    <value>Executando query...</value>
+  </data>
+  <data name="incident_created" xml:space="preserve">
+    <value>Incidente criado!</value>
+  </data>
+  <data name="item_cached" xml:space="preserve">
+    <value>Item salvo em cache!</value>
+  </data>
+  <data name="item_created" xml:space="preserve">
+    <value>Item criado!</value>
+  </data>
+  <data name="link_not_found" xml:space="preserve">
+    <value>Link não encontrado!</value>
+  </data>
+  <data name="loading" xml:space="preserve">
+    <value>Carregando...</value>
+  </data>
+  <data name="loading_tasks" xml:space="preserve">
+    <value>Carregando tarefas...</value>
+  </data>
+  <data name="loading_wp" xml:space="preserve">
+    <value>Carregando ordem de serviço...</value>
+  </data>
+  <data name="login_error" xml:space="preserve">
+    <value>Erro ao realizar o login!</value>
+  </data>
+  <data name="mobile_tab_not_found" xml:space="preserve">
+    <value>Tab mobile não encontrada!</value>
+  </data>
+  <data name="my_tasks_not_found" xml:space="preserve">
+    <value>Query minhas tarefas não encontrada!</value>
+  </data>
+  <data name="my_wp_not_found" xml:space="preserve">
+    <value>Query Minhas ordens de serviço não encontrada!</value>
+  </data>
+  <data name="no_access" xml:space="preserve">
+    <value>Acesso negado!</value>
+  </data>
+  <data name="no_attributes" xml:space="preserve">
+    <value>Esse objeto não possui atributos</value>
+  </data>
+  <data name="no_network" xml:space="preserve">
+    <value>Rede não disponível!</value>
+  </data>
+  <data name="no_tasks_found" xml:space="preserve">
+    <value>Nennhuma tarefa encontrada!</value>
+  </data>
+  <data name="no_wp_found" xml:space="preserve">
+    <value>Nenhuma ordem de serviço encontrada!</value>
+  </data>
+  <data name="offline_upload" xml:space="preserve">
+    <value>Somente é possível fazer o upload online!</value>
+  </data>
+  <data name="query_not_found" xml:space="preserve">
+    <value>Query @ não encontrada!</value>
+  </data>
+  <data name="results_found" xml:space="preserve">
+    <value>Foram encontrados @ resultados!</value>
+  </data>
+  <data name="save_failed" xml:space="preserve">
+    <value>Falha ao salvar!</value>
+  </data>
+  <data name="saving" xml:space="preserve">
+    <value>Salvando...</value>
+  </data>
+  <data name="saving_tasks" xml:space="preserve">
+    <value>Salvando tarefas...</value>
+  </data>
+  <data name="searching" xml:space="preserve">
+    <value>Buscando...</value>
+  </data>
+  <data name="search_error" xml:space="preserve">
+    <value>Erro ao buscar!</value>
+  </data>
+  <data name="server_error" xml:space="preserve">
+    <value>Erro no servidor!</value>
+  </data>
+  <data name="timeout" xml:space="preserve">
+    <value>A requisição recebeu timeout!</value>
+  </data>
+  <data name="uploading_tasks_only_online" xml:space="preserve">
+    <value>Somente é possível fazer o upload das tarefas online!</value>
+  </data>
+  <data name="basic_info" xml:space="preserve">
+    <value>Informações básicas</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="create_incident" xml:space="preserve">
+    <value>Criar incidente</value>
+  </data>
+  <data name="inform_tag_reference" xml:space="preserve">
+    <value>Informar tag relacionado ao incidente?</value>
+  </data>
+  <data name="new_incident" xml:space="preserve">
+    <value>Novo incidente</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="Inspection" xml:space="preserve">
+    <value>inspeção</value>
+  </data>
+  <data name="Inspections" xml:space="preserve">
+    <value>Inspeções</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Deletar</value>
+  </data>
+  <data name="delete_question" xml:space="preserve">
+    <value>Deletar?</value>
+  </data>
+  <data name="download_failed" xml:space="preserve">
+    <value>Falha no download!</value>
+  </data>
+  <data name="open_with" xml:space="preserve">
+    <value>Abrir com</value>
+  </data>
+  <data name="reloging" xml:space="preserve">
+    <value>Relogando...</value>
+  </data>
+  <data name="specifications" xml:space="preserve">
+    <value>Especificações</value>
+  </data>
+  <data name="documents" xml:space="preserve">
+    <value>Documentos</value>
+  </data>
+  <data name="logoff" xml:space="preserve">
+    <value>Desconectar</value>
+  </data>
+  <data name="media" xml:space="preserve">
+    <value>Mídia</value>
+  </data>
+  <data name="projects" xml:space="preserve">
+    <value>Projetos</value>
+  </data>
+  <data name="theme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="choose_theme" xml:space="preserve">
+    <value>Escolha o tema</value>
+  </data>
+  <data name="document_not_found" xml:space="preserve">
+    <value>Documento não encontrado!</value>
+  </data>
+  <data name="downloading_documents" xml:space="preserve">
+    <value>Baixando documentos...</value>
+  </data>
+  <data name="save_not_possible" xml:space="preserve">
+    <value>Não é possível salvar o documento!</value>
+  </data>
+  <data name="save_question" xml:space="preserve">
+    <value>Salvar alterações?</value>
+  </data>
+  <data name="new_item" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="workpackages" xml:space="preserve">
+    <value>Ordens de serviço</value>
+  </data>
+  <data name="go_offline" xml:space="preserve">
+    <value>Trabalhar offline?</value>
+  </data>
+  <data name="upload_failed" xml:space="preserve">
+    <value>Falha no upload!</value>
+  </data>
+  <data name="upload_sucess" xml:space="preserve">
+    <value>Upload concluído!</value>
+  </data>
+</root>

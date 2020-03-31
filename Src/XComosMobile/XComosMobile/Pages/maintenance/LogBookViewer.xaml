@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:DevicesContainer xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+            xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"             
+             xmlns:ffimage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:q="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             xmlns:local="clr-namespace:XComosMobile.Pages.maintenance;assembly=XComosMobile"
+             Title="Libro de Partes Diarios"
+             x:Class="XComosMobile.Pages.maintenance.LogBookViewer" >
+
+  <ListView x:Name="ListViewDevices"
+  RowHeight="100"          
+  ItemsSource="{Binding DeviceContainerCollection}" HasUnevenRows="True"
+  IsGroupingEnabled="False"
+  GroupDisplayBinding="{Binding Key}"
+  GroupShortNameBinding="{Binding Key}"
+  ItemTapped="ListViewDevices_ItemTapped">
+
+    <!--CachingStrategy="RecycleElement"-->
+
+    <ListView.Footer>
+      <StackLayout HeightRequest="65"/>
+    </ListView.Footer>
+
+    <ListView.GroupHeaderTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout VerticalOptions="FillAndExpand" Padding="10" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+            <Label Text="{Binding Key}" TextColor="{DynamicResource ComosColorNavBar}" VerticalOptions="CenterAndExpand"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.GroupHeaderTemplate>
+    
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <Frame OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" CornerRadius="8" BackgroundColor="{DynamicResource ComosColorModuleCard}" Margin="5">
+            <!--<Frame.GestureRecognizers>
+              <TapGestureRecognizer
+                              Tapped="Unassigned_Event_Clicked"
+                              NumberOfTapsRequired="1" />
+            </Frame.GestureRecognizers>-->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+              <Grid>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+                  <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="LogBookEntryName" Text="{Binding Name}" Grid.Column="0" Grid.Row="0" VerticalOptions="FillAndExpand" LineBreakMode="WordWrap" FontAttributes="Bold" TextColor="{DynamicResource ComosColorNavBar}" />
+								<Label x:Name="LogBookEntryAdditionalInfo" Text="{Binding AditionalInfo}" Grid.Column="0" Grid.Row="1" VerticalOptions="FillAndExpand" LineBreakMode="WordWrap" FontAttributes="None" TextColor="{DynamicResource ComosColorNavBar}" />
+              </Grid>
+              <!--<xcontrols:AFButton x:Name="BelongsToAnEquipment" Text="{Binding belongsToAnEquipment}" TextColor="{DynamicResource ComosColorModuleCard}" BackgroundColor="{Binding Color}" FontSize="20" VerticalOptions="Center" HorizontalOptions="End" WidthRequest="30" HeightRequest="30" CornerRadius="30"/>-->
+            </StackLayout>
+          </Frame>
+         
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+    
+  </ListView>
+        
+</xcomos:DevicesContainer>
+
+

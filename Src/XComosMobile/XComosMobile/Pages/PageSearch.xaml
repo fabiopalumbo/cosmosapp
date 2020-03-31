@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xcomos:PageTemplate xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xcomos="clr-namespace:XComosMobile;assembly=XComosMobile"
+             xmlns:xlng="clr-namespace:XComosMobile.Services;assembly=XComosMobile"             
+             xmlns:xcontrols="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             ControlTemplate="{StaticResource PageTemplate}"
+             xmlns:q="clr-namespace:XComosMobile.Pages.controls;assembly=XComosMobile"
+             Title="{xlng:Translate search_assets}"
+             x:Class="XComosMobile.Pages.PageSearch">
+
+    <StackLayout Margin="0,10,0,0" VerticalOptions="FillAndExpand">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+				        <Label Text="Tags" VerticalTextAlignment="Center" TextColor="{DynamicResource UITextColor}" IsVisible="False"/>
+				        <Switch x:Name="toggletags" IsToggled="True" IsVisible="False"/>
+            </StackLayout>
+            <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+				        <Label Text="{xlng:Translate documents}" VerticalTextAlignment="Center" TextColor="{DynamicResource UITextColor}" IsVisible="False"/>
+                <Switch x:Name="toggledocs" IsToggled="True" IsVisible="False"/>
+            </StackLayout>
+        </Grid>
+        <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Frame Padding="2" BackgroundColor="White">
+				<SearchBar x:Name="searchBarPageSearch" Placeholder="{xlng:Translate search_asset_entry}" SearchButtonPressed="searchBar_SearchButtonPressed" HorizontalOptions="FillAndExpand" TextColor="{DynamicResource UITextColor}"/>
+            </Frame>
+                        
+            <ListView x:Name="m_List"
+                      ListView.HasUnevenRows="True" 
+                      VerticalOptions="FillAndExpand" 
+                      HorizontalOptions="FillAndExpand">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="0,4,0,0" OutlineColor="{DynamicResource ComosColorNavBar}" HasShadow="True" BackgroundColor="{DynamicResource ComosColorModuleCard}">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer
+                                        Tapped="m_List_ItemTapped"
+                                        NumberOfTapsRequired="1" />
+                                    </StackLayout.GestureRecognizers>
+                                    <xcontrols:AFLabel Text="{Binding DisplayIcon}" TextColor="{DynamicResource ComosColorNavBar}" FontSize="25" VerticalOptions ="Center" HorizontalOptions="Start"/>
+                                    <StackLayout Margin="5,0,0,0">
+                                        <Label VerticalTextAlignment="Center" Text="{Binding DisplayName}" FontAttributes="Bold" TextColor="{DynamicResource UITextColor}"/>
+                                        <Label VerticalTextAlignment="Center" Text="{Binding DisplayDescription}" TextColor="{DynamicResource UITextColor}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </StackLayout>
+</xcomos:PageTemplate>

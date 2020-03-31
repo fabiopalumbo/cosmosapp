@@ -1,0 +1,10 @@
+﻿# Comments are lines which start with '#'
+# Blank lines are ignored.
+
+
+# Enable GREF messages to `adb logcat`
+#debug.mono.log=gref
+#debug.mono.profile
+
+# Clear out a Mono environment variable to decrease logging
+MONO_LOG_LEVEL=MONO_LOG_LEVEL
